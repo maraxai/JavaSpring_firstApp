@@ -1,5 +1,6 @@
 package com.maraxai.firstapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -31,7 +32,7 @@ public class Course {
     name="student_course",
     joinColumns= @JoinColumn(name="student_id"), 
     inverseJoinColumns = @JoinColumn(name="course_id"))
-  private Set<Student> students;
+  private Set<Student> students = new HashSet<>();
 
     /*
   * CONSTRUCTORS
@@ -66,6 +67,10 @@ public class Course {
     this.courseDescription = courseDescription;
   }
 
+  public void setStudents(Set<Student> students) {
+    this.students = students;
+  }
+
   /*
   * GETTERS/ACCESSORS
   */
@@ -83,6 +88,10 @@ public class Course {
 
   public String getCourseDescription() {
     return courseDescription;
+  }
+
+  public Set<Student> getStudents() {
+    return students;
   }
 
   // Override the methods equals(), hashCode() and toString()

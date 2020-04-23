@@ -1,5 +1,6 @@
 package com.maraxai.firstapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -28,7 +29,7 @@ public class Student {
   * assign a relationship
   */
   @ManyToMany(mappedBy = "students")
-  private Set<Course> courses;
+  private Set<Course> courses = new HashSet<>();
 
   /*
   * CONSTRUCTORS
@@ -58,6 +59,10 @@ public class Student {
     this.lastName = lastName;
   }
 
+  public void setCourses(Set<Course> courses) {
+    this.courses = courses;
+  }
+
   /*
   * GETTERS/ACCESSORS
   */
@@ -71,6 +76,10 @@ public class Student {
 
   public String getLastName() {
     return lastName;
+  }
+
+  public Set<Course> getCourses() {
+    return courses;
   }
 
   // Override the methods equals(), hashCode() and toString()
