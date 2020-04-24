@@ -24,14 +24,12 @@ public class Student {
   private String firstName;
   private String lastName;
 
-  /* delcare courses as an interface 'Set' of type 'Course', a set contains only unique values, no order guaranteed
-  * assign a relationship
-  */
+  // annotate the private field as a many-to-many relationship, mapped by the property students 
   @ManyToMany(mappedBy = "students")
   private Set<Course> courses;
 
   /*
-  * CONSTRUCTORS
+  * CONSTRUCTORS, constructor overloading
   */
   // empty constructor, needed for Hibernate to handle the JPA
   public Student() {
@@ -58,6 +56,10 @@ public class Student {
     this.lastName = lastName;
   }
 
+  public void setCourses(Set<Course> courses) {
+    this.courses = courses;
+  }
+
   /*
   * GETTERS/ACCESSORS
   */
@@ -71,6 +73,10 @@ public class Student {
 
   public String getLastName() {
     return lastName;
+  }
+
+  public Set<Course> getCourses() {
+    return courses;
   }
 
   // Override the methods equals(), hashCode() and toString()

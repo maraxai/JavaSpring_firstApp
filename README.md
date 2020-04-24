@@ -7,7 +7,11 @@
 
 Please note the different branches for the different stages of development:
 
-* part1_POJOs
+* 1_POJOs
+* 2_JPA-Entities
+* 3_JPA-Repositories
+* 4_Controllers
+* 5_Thymeleaf
 
 ### Medium Post 
 The code documents the article in Medium
