@@ -25,8 +25,9 @@ public class Student {
   private String firstName;
   private String lastName;
 
-  /* delcare courses as an interface 'Set' of type 'Course', a set contains only unique values, no order guaranteed
-  * assign a relationship
+  /* 
+    assign a HashSet to the field courses with the interface 'Set' of type 'Course'
+    annotate a many-to-many relationship, mapped by the property students
   */
   @ManyToMany(mappedBy = "students")
   private Set<Course> courses = new HashSet<>();
