@@ -8,10 +8,13 @@ public class Student {
   private Long id;
   private String firstName;
   private String lastName;
-  /* delcare courses as an interface 'Set' of type 'Course'
-     A set contains only unique values, no order guaranteed
-  */
+
+  //declare courses as an interface 'Set' of type 'Course'
   private Set<Course> courses;
+
+  /*
+    CONSTRUCTORS, we use constructor overloading
+  */
 
   // empty constructor, needed for Hibernate to handle the JPA
   public Student() {
@@ -23,7 +26,9 @@ public class Student {
     this.lastName = lastName;
   }
 
-  // setters
+  /*
+    SETTERS
+  */
   public void setId(Long id) {
     this.id = id;
   }
@@ -36,7 +41,13 @@ public class Student {
     this.lastName = lastName;
   }
 
-  // getters
+  public void setCourses(Set<Course> courses) {
+    this.courses = courses;
+  }
+
+  /*
+    GETTERS
+  */
   public Long getId() {
     return id;
   }
@@ -47,6 +58,10 @@ public class Student {
 
   public String getLastName() {
     return lastName;
+  }
+
+  public Set<Course> getCourses() {
+    return courses;
   }
 
 
