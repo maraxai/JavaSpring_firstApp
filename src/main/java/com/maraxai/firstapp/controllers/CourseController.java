@@ -12,12 +12,12 @@ public class CourseController {
   // create private constant of type CourseRepository
   private final CourseRepository courseRepository;
 
-  // create a controller
+  // constructor, inject courseRepository into controller
   public CourseController(CourseRepository courseRepository) {
     this.courseRepository = courseRepository;
   }
 
-  // annotate   
+  // map the method getCourses() to the URI '/courses' with the annotation @RequestMapping  
   @RequestMapping("/courses")
   public String getCourses(Model model) {
     model.addAttribute("courses", courseRepository.findAll());

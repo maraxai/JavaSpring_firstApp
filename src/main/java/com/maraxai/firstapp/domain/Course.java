@@ -24,15 +24,16 @@ public class Course {
   private String course;
   private String courseTitle;
   private String courseDescription;
-  /* delcare courses as an interface 'Set' of type 'Student', s set contains only unique values, no order guaranteed
-  * define the relationship through the annotation
+  /* 
+    for Hibernate, declare a many-to-many relationship and create a join table with the foreign keys of the ids
   */
   @ManyToMany
   @JoinTable(
     name="student_course",
-    joinColumns= @JoinColumn(name="student_id"), 
-    inverseJoinColumns = @JoinColumn(name="course_id"))
-  private Set<Student> students = new HashSet<>();
+    joinColumns= { @JoinColumn(name="student_id") }, 
+    inverseJoinColumns = { @JoinColumn(name="course_id") })
+  // create a HashSet and assign it to the field students with the interface 'Set' of type 'Student'
+  private Set<Student> students = new HashSet<Student>();
 
     /*
   * CONSTRUCTORS
@@ -70,6 +71,7 @@ public class Course {
   public void setStudents(Set<Student> students) {
     this.students = students;
   }
+  
 
   /*
   * GETTERS/ACCESSORS

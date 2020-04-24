@@ -29,7 +29,7 @@ public class Student {
   * assign a relationship
   */
   @ManyToMany(mappedBy = "students")
-  private Set<Course> courses = new HashSet<>();
+  private Set<Course> courses = new HashSet<Course>();
 
   /*
   * CONSTRUCTORS
@@ -62,6 +62,7 @@ public class Student {
   public void setCourses(Set<Course> courses) {
     this.courses = courses;
   }
+
 
   /*
   * GETTERS/ACCESSORS
@@ -100,10 +101,10 @@ public class Student {
 
   @Override
   public String toString() {
-    return "Student{" +
+    return "Student {" +
       "id=" + id +
-      ", firstName=' " + firstName + "\' " +
-      ", lastName=' " + lastName + "\' " +
+      ", firstName='" + firstName + "\'" +
+      ", lastName='" + lastName + "\'" +
     '}';
   }
 

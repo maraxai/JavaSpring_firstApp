@@ -29,19 +29,22 @@ public class BootStrapData implements CommandLineRunner {
     Student fran = new Student("Fran", "Troy");
     Course oop = new Course( "CS202", "OOP", "Object-Oriented Programming");
     Course intro = new Course("SC101", "Intro", "Introduction to Computer Science");
-    bob.getCourses().add(oop);
     bob.getCourses().add(intro);
+    bob.getCourses().add(oop);
     gil.getCourses().add(intro);
+    gil.getCourses().add(oop);
+    fran.getCourses().add(intro);
     oop.getStudents().add(bob);
-    intro.getStudents().add(gil);
+    oop.getStudents().add(gil);
     intro.getStudents().add(bob);
+    intro.getStudents().add(gil);
+    intro.getStudents().add(fran);
     
     studentRepository.save(bob);
     studentRepository.save(gil);
+    studentRepository.save(fran);
     courseRepository.save(oop);
     courseRepository.save(intro);
-
-    
 
     System.out.println("Started in Bootstrap");
     System.out.println("Number of Courses: " + courseRepository.count());
