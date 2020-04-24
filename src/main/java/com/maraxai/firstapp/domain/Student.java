@@ -1,5 +1,6 @@
 package com.maraxai.firstapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -26,10 +27,10 @@ public class Student {
 
   // annotate the private field as a many-to-many relationship, mapped by the property students 
   @ManyToMany(mappedBy = "students")
-  private Set<Course> courses;
+  private Set<Course> courses = new HashSet<>();
 
   /*
-  * CONSTRUCTORS, constructor overloading
+    CONSTRUCTORS, constructor overloading
   */
   // empty constructor, needed for Hibernate to handle the JPA
   public Student() {
@@ -42,7 +43,7 @@ public class Student {
   }
 
   /*
-  * SETTERS/MUTATORS
+    SETTERS/MUTATORS
   */
   public void setId(Long id) {
     this.id = id;
@@ -61,7 +62,7 @@ public class Student {
   }
 
   /*
-  * GETTERS/ACCESSORS
+    GETTERS/ACCESSORS
   */
   public Long getId() {
     return id;

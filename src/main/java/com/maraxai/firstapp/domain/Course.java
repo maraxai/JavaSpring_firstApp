@@ -1,5 +1,6 @@
 package com.maraxai.firstapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -23,18 +24,20 @@ public class Course {
   private String course;
   private String courseTitle;
   private String courseDescription;
-  /* delcare courses as an interface 'Set' of type 'Student', s set contains only unique values, no order guaranteed
-  * define the relationship through the annotation
+  /* 
+    create a HashSet and assign it to the property courses with the interface 'Set' of type 'Student'
+    inform Hibernate about the Many-to-Many relationship through the annotation
+    create a join table with the foreign keys of ids
   */
   @ManyToMany
   @JoinTable(
     name="student_course",
     joinColumns= @JoinColumn(name="student_id"), 
     inverseJoinColumns = @JoinColumn(name="course_id"))
-  private Set<Student> students;
+  private Set<Student> students = new HashSet<>();
 
-    /*
-  * CONSTRUCTORS
+  /*
+    CONSTRUCTORS
   */
   // empty constructor, needed for Hibernate to handle the JPA
   public Course() {
@@ -47,8 +50,8 @@ public class Course {
     this.courseDescription = courseDescription;
   }
 
-    /*
-  * SETTERS/MUTATORS
+  /*
+    SETTERS/MUTATORS
   */
   public void setId(Long id) {
     this.id = id;
@@ -67,7 +70,7 @@ public class Course {
   }
 
   /*
-  * GETTERS/ACCESSORS
+    GETTERS/ACCESSORS
   */
   public Long getId() {
     return id;
