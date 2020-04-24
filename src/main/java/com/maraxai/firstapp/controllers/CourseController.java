@@ -1,5 +1,6 @@
 package com.maraxai.firstapp.controllers;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 import com.maraxai.firstapp.repositories.CourseRepository;
 
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,12 @@ public class CourseController {
   public String getCourses(Model model) {
     model.addAttribute("courses", courseRepository.findAll());
     return "courses";
+  }
+
+  @RequestMapping("/courses:id")
+  public String getCourseById(Model model) {
+    model.addAttribute("course", courseRepository.findById());
+    return "course";
   }
 
 
