@@ -1,18 +1,18 @@
 package com.maraxai.firstapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Course {
 
   // declare fields
   private Long id;
-  private String courseId;
   private String course;
   private String courseTitle;
   private String courseDescription;
   
-  // declare courses as an interface 'Set' of type 'Student'
-    private Set<Student> students;
+  // create a Hashset and assign it to the field courses with the interface 'Set' of type 'Course'
+    private Set<Student> students = new HashSet<>();
 
     
   /*

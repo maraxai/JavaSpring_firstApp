@@ -1,5 +1,6 @@
 package com.maraxai.firstapp.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Student {
@@ -9,8 +10,8 @@ public class Student {
   private String firstName;
   private String lastName;
 
-  //declare courses as an interface 'Set' of type 'Course'
-  private Set<Course> courses;
+  // create a Hashset and assign it to the field courses with the interface 'Set' of type 'Course'
+  private Set<Course> courses = new HashSet<>();
 
   /*
     CONSTRUCTORS, we use constructor overloading
