@@ -25,11 +25,4 @@ public class CourseController {
     return "courses";
   }
 
-  @RequestMapping("/courses:id")
-  public String getCourseById(Model model) {
-    model.addAttribute("course", courseRepository.findById());
-    return "course";
-  }
-
-
 }

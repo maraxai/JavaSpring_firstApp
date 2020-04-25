@@ -12,7 +12,7 @@ public class StudentController {
   // create private constant of type StudentRepository
   private final StudentRepository studentRepository;
 
-  // create a controller
+  // constructor, inject the studentRepository into the controller
   public StudentController(StudentRepository studentRepository) {
     this.studentRepository = studentRepository;
   }

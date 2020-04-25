@@ -7,19 +7,31 @@
   <title>Students</title>
 </head>
 <body>
+  
+  <div class="card w-75">
+    <div class="card text-center">
+      <div class="card-header">
+        Students
+      </div>
+      <div class="card-body">
+      
+        <table class="table table-hover">
+          <tr scope="row">
+            <th scope="col">id</th>
+            <th scope="col">firstName</th>
+            <th scope="col">lastName</th>
+            <tr scope="row" th:each="student : ${students}">
+              <td scope="col" th:text="${student.id}">007</td>
+              <td scope="col" th:text="${student.firstName}">mo</td>
+              <td  scope="col"th:text="${student.lastName}">dee</td>
+            </tr>
+          </tr>
+        </table>
+  
+      </div>
+    </div>
+  </div>
 
-  <table class="table table-hover">
-    <tr scope="row">
-      <th scope="col">id</th>
-      <th scope="col">firstName</th>
-      <th scope="col">lastName</th>
-      <tr scope="row" th:each="student : ${students}">
-        <td scope="col" th:text="${student.id}">007</td>
-        <td scope="col" th:text="${student.firstName}">mo</td>
-        <td  scope="col"th:text="${student.lastName}">dee</td>
-      </tr>
-    </tr>
-  </table>
   
 </body>
 </html>
