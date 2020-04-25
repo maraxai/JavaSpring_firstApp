@@ -15,6 +15,6 @@ Please note the different branches for the different stages of development:
 
 ### Medium Post 
 The code documents the article in Medium
-* [My First Java Spring Web App] 
+* [Java Spring Boot] 
 
-[My First Java Spring Web App]: <https://https://medium.com/@mikedietz724/>
+[Java Spring Boot]: <https://medium.com/@mikedietz724/java-spring-boot-62691414119c?sk=3265b3a03832afd14ecb005572c7aa46>
