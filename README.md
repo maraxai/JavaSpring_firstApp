@@ -7,10 +7,14 @@
 
 Please note the different branches for the different stages of development:
 
-* part1_POJOs
+* 1_POJOs
+* 2_JPA-Entities
+* 3_JPA-Repositories
+* 4_Controllers
+* 5_Thymeleaf
 
 ### Medium Post 
 The code documents the article in Medium
-* [My First Java Spring Web App] 
+* [Java Spring Boot] 
 
-[My First Java Spring Web App]: <https://https://medium.com/@mikedietz724/>
+[Java Spring Boot]: <https://medium.com/@mikedietz724/java-spring-boot-62691414119c?sk=3265b3a03832afd14ecb005572c7aa46>
